@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LuxScale — Light it right. Prove it.</title>
+<link rel="stylesheet" href="css/sc.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<nav class="rail" aria-label="Main">
+  <img id="railLogo" src="https://shortcircuit.company/assets/img/logo-dark.svg" alt="Short Circuit Company">
+  <a href="#top" class="on"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v10H3z"/></svg><span>Home</span></a>
+  <a href="#auto" data-open><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><span>Auto Study</span></a>
+  <a href="studio.html"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 12h18M12 3v18"/></svg><span>Study Studio</span></a>
+  <a href="cad.html"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg><span>CAD Study</span></a>
+  <a class="dis" href="#" aria-disabled="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/></svg><span>Chat with LuxSCale · soon</span></a>
+  <div class="sp"></div>
+  <button id="theme" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><span>Light / Dark</span></button>
+</nav>
+
+<main class="wrap" id="top">
+  <header class="hero">
+    <img id="logo" class="logo" src="assets/lux-logo-dark.svg" alt="LuxScale AI">
+    <h1 id="h1" aria-label="Light it right. Prove it."><span id="t1"></span><span class="caret"></span></h1>
+    <p class="sub" id="sub"></p>
+
+    <div class="grid4">
+      <div class="card reveal"><p class="eyebrow">Engine</p><h3>Radiosity physics</h3><p>Direct light plus interreflection on floor, walls and ceiling.</p></div>
+      <div class="card reveal"><p class="eyebrow">Standards</p><h3>EN 12464-1</h3><p>Targets read straight from the standards catalog.</p></div>
+      <div class="card reveal"><p class="eyebrow">Fixtures</p><h3>Real catalog</h3><p>Real variants with real photometry (IES) and power data.</p></div>
+      <!-- TODO: confirm the ~0.5 % Relux match figure is public before showing it -->
+      <div class="card reveal stat"><p class="eyebrow">Accuracy</p><b data-count="0.5" data-pre="≈ ">0</b><p>% deviation vs. Relux reference room.</p></div>
+    </div>
+
+    <div class="cta" id="cta">
+      <div class="arch" id="arch"><svg viewBox="0 0 600 310" id="archSvg" role="menu" aria-label="Choose a tool"></svg></div>
+      <div class="sheet" id="sheet"></div>
+      <button class="btn" id="start" aria-expanded="false">Start with LuxScale</button>
+      
+    </div>
+    <div class="scrim" id="scrim"></div>
+  </header>
+
+  </main>
+<dialog id="modal" class="modal narrow" aria-labelledby="mt"><button class="x" id="mx" type="button" aria-label="Close">×</button>
+<p class="eyebrow">Auto Study</p><h2 id="mt">Set up your study</h2><div class="bar"></div>
+<form id="setup">
+<p class="q">1 · Room shape</p>
+<div class="opts">
+<label class="opt"><input type="radio" name="shape" value="uniform" checked><b>Uniform</b><small>Square, rectangle, hexagon… type the dimensions</small></label>
+<label class="opt"><input type="radio" name="shape" value="nonuniform"><b>Non-uniform</b><small>Draw it, or type corner coordinates and edge lengths</small></label>
+</div>
+<p class="q">2 · Standard <span class="cap">optional now, required to run the study</span></p>
+<div class="f"><label>Category<select id="cat"></select></label><label>Activity<select id="act"></select></label></div>
+<p class="q">3 · Do you have a CAD drawing?</p>
+<label class="opt sw"><input type="checkbox" id="hasCad"><b>Yes, I have a DWG</b></label>
+<label id="cadRow" hidden style="margin-top:10px">DWG / DXF file<input type="file" id="cadFile" accept=".dwg,.dxf"></label>
+<div class="full" style="margin-top:26px"><button class="btn" type="submit">Continue</button></div>
+</form></dialog>
+
+<script src="js/api.js"></script>
+<script src="js/landing.js"></script>
+</body>
+</html>
